@@ -9,8 +9,6 @@ services:
       - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
-      - ../shared/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
-      - ../shared/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
     environment:
       GF_SECURITY_ADMIN_USER: admin
       GF_SECURITY_ADMIN_PASSWORD: superSecret
