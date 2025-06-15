@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  grafana:
+    image: grafana/grafana-oss:11.4.0   # or grafana/grafana-enterprise:11.4.0
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ../shared/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
+      - ../shared/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: superSecret
+      GF_SERVER_DOMAIN: grafana.mycorp.local          # optional, sets links in alerts
+      TZ: "Asia/Seoul"
+
+volumes:
+  grafana_data:
+  
