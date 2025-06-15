@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  promtail:
+    image: grafana/promtail:3.5.1
+    container_name: promtail
+    command: -config.file=/etc/promtail/promtail.yaml
+    ports:
+      - "9080:9080"
+    volumes:
+      - ./config/promtail.yaml:/etc/promtail/promtail.yaml:ro
+      - C:/var/log:/var/log:ro
+    networks: [loki-net]
+    depends_on: [loki]

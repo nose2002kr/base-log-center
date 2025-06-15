@@ -4,3 +4,4 @@ include:
   - build/grafana.yaml
   # - build/prometheus.yaml
   - build/loki.yaml
+  - build/promtail.yaml
