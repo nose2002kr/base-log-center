@@ -1,5 +1,6 @@
 version: "3.9"
 
 include:
-  - build/grafana.yml
-  - build/prometheus.yml
+  - build/grafana.yaml
+  # - build/prometheus.yaml
+  - build/loki.yaml

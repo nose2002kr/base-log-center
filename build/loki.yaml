@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  loki:
+    image: grafana/loki:3.5.1
+    container_name: loki
+    command: -config.file=/etc/loki/loki.yaml -config.expand-env=true
+    volumes:
+      - ./config/loki.yaml:/etc/loki/loki.yaml:ro
+      - loki_data:/loki
+    ports:
+      - "3100:3100"
+    networks: [loki-net]
+
+volumes:
+  loki_data:
+
+networks:
+  loki-net:

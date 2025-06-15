@@ -16,7 +16,8 @@ services:
       GF_SECURITY_ADMIN_PASSWORD: superSecret
       GF_SERVER_DOMAIN: grafana.mycorp.local          # optional, sets links in alerts
       TZ: "Asia/Seoul"
+    networks: [loki-net]
 
 volumes:
   grafana_data:
-  
+

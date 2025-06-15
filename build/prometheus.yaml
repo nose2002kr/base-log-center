@@ -5,7 +5,7 @@ services:
     image: prom/prometheus:v3.2.1
     container_name: prometheus
     volumes:
-      - ../shared/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
+      - ./config/prometheus.yaml:/etc/prometheus/prometheus.yaml:ro
       - prometheus-data:/prometheus
     ports:
       - "9090:9090"
