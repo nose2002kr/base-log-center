@@ -2,6 +2,6 @@ version: "3.9"
 
 include:
   - build/grafana.yaml
-  # - build/prometheus.yaml
+  - build/prometheus.yaml
   - build/loki.yaml
   - build/promtail.yaml

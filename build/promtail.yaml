@@ -10,5 +10,5 @@ services:
     volumes:
       - ./config/promtail.yaml:/etc/promtail/promtail.yaml:ro
       - C:/var/log:/var/log:ro
-    networks: [loki-net]
+    networks: [loki-net, monitoring]
     depends_on: [loki]

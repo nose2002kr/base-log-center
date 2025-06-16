@@ -3,6 +3,10 @@ global:
   evaluation_interval: 15s
 
 scrape_configs:
-  - job_name: prometheus        # self-monitoring
+  - job_name: prometheus # self-monitoring
     static_configs:
       - targets: ['localhost:9090']
+
+  - job_name: promtail # promtail-monitoring
+    static_configs:
+      - targets: ['promtail:9080']
